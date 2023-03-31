@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Experience</title>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: auto;
+        }
+
+        .form {
+            height: 95%;
+            box-shadow: 3px 3px 3px 3px #ccc;
+        }
+
+        .header {
+            display: flex;
+            flex-direction: row;
+            height: 30px;
+            margin: 10px;
+        }
+
+        .hr {
+            width: 5px;
+            height: 30px;
+            background-color: red;
+            margin-right: 5px;
+        }
+
+        .title {
+            font-size: 20px;
+            color: #4682B4;
+            margin-top: 4px;
+        }
+
+        .hr1 {
+            width: 300px;
+            height: 0.5px;
+            background-color: #ccc;
+            margin: 15px 10px 0 10px;
+        }
+
+        #op {
+            width: 75px;
+            border: 3px solid #ccc;
+            border-radius: 3px;
+        }
+
+        .under-header {
+            display: flex;
+            flex-direction: column;
+            width: 680px;
+            margin: 10px;
+        }
+
+        .hr2 {
+            height: 0.5px;
+            width: 100%;
+            background-color: #ccc;
+        }
+
+        .info__text {
+            display: flex;
+            flex-direction: column;
+            width: 250px;
+            align-items: end;
+            font-size: 18px;
+        }
+
+        .cm {
+            margin-bottom: 40px;
+        }
+
+        .cm1 {
+            margin-bottom: 150px;
+        }
+
+        .info-input {
+            display: flex;
+            flex-direction: column;
+            width: 340px;
+            margin-left: 40%;
+            position: relative;
+            top: -476px;
+        }
+
+        #text {
+            height: 26px;
+            margin-bottom: 25px;
+            border: 2px solid #ccc;
+            border-radius: 2px;
+        }
+        
+        .info__input-select {
+            margin-top: 7px;
+            font-size: 18px;
+        }
+
+        #month,
+        #year {
+            margin: 0 4px;
+            height: 30px;
+            border: 2px solid #ccc;
+            border-radius: 2px;
+        }
+
+        .info__input--select {
+            margin-top: 30px;
+        }
+
+        #salary {
+            height: 26px;
+            margin-right: 14px;
+            border: 2px solid #ccc;
+            border-radius: 2px;
+        }
+
+        #salary1 {
+            height: 26px;
+            border: 2px solid #ccc;
+            border-radius: 2px;
+            width: 78%;
+        }
+
+        #textarea1 {
+            margin-top: 30px;
+            resize: none;
+        }
+
+        #textarea2 {
+            margin-top: 30px;
+            resize: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: red;
+        }
+
+        .btn-save {
+            height: 40px;
+            width: 110px;
+            margin-top: 10px;
+            margin-right: 10px;
+            background-color: red;
+            border: none;
+            border-radius: 2px;
+            color: white;
+            cursor: pointer;
+        }
+
+        .btn-save:hover {
+            background-color: #DC143C;
+        }
+
+        .btn-notsave {
+            height: 40px;
+            width: 110px;
+            margin-top: 10px;
+            background-color: #a2a2a2;
+            border: none;
+            border-radius: 2px;
+            color: white;
+            cursor: pointer;
+        }
+
+        .btn-notsave:hover {
+            background-color: #ccc;
+        }
+
+        .bx {
+            font-size: 25px;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form class="form">
+            <div class="header">
+                <span class="hr"></span>
+                <span class="title"><b>Kinh nghiệm làm việc</b> <i> (bắt buộc)</i></span>
+                <hr class="hr1">
+                <select name="op" id="op">
+                    <option value="RG">Rút gọn</option>
+                    <option value="MR">Mở rộng</option>
+                </select>
+            </div>
+            <div class="under-header">
+                <span class="text">Hãy liệt kê những công việt, nhiệm vụ mà bạn đã từng đảm nhận và thực hiện. Chú ý liệt kê kinh nghiệm làm việc từ thời gian gần đây nhất trở về trước.</span>
+                <hr class="hr2">
+            </div>
+            <div class="content">
+                <div class="info__text">
+                    <span class="cm">Công ty <a href="#">*</a></span>
+                    <span class="cm">Chức danh <a href="#">*</a></span>
+                    <span class="cm">Thời gian làm việc <a href="#">*</a></span>
+                    <span class="cm">Mức lương</span>
+                    <span class="cm1">Mô tả công việc <a href="#">*</a></span>
+                    <span class="cm">Thành tích đạt được</span>
+                </div>
+                <div class="info-input">
+                    <input type="text" name="text" id="text">
+                    <input type="text" name="text" id="text">
+                    <div class="info__input-select">
+                        <span>từ</span>
+                        <select name="month" id="month">
+                            <option value="">Tháng</option>
+                            <option value="01">1</option>
+                            <option value="02">2</option>
+                            <option value="03">3</option>
+                            <option value="04">4</option>
+                            <option value="05">5</option>
+                            <option value="06">6</option>
+                            <option value="07">7</option>
+                            <option value="08">8</option>
+                            <option value="09">9</option>
+                            <option value="10">10</option>
+                        </select>
+                        <select name="year" id="year">
+                            <option value="">Năm</option>
+                            <option value="2000">2000</option>
+                            <option value="2001">2001</option>
+                            <option value="2002">2002</option>
+                            <option value="2003">2003</option>
+                            <option value="2004">2004</option>
+                            <option value="2005">2005</option>
+                            <option value="2006">2006</option>
+                            <option value="2007">2007</option>
+                            <option value="2008">2008</option>
+                        </select>
+                        <span>đến</span>
+                        <select name="month" id="month">
+                            <option value="">Tháng</option>
+                            <option value="01">1</option>
+                            <option value="02">2</option>
+                            <option value="03">3</option>
+                            <option value="04">4</option>
+                            <option value="05">5</option>
+                            <option value="06">6</option>
+                            <option value="07">7</option>
+                            <option value="08">8</option>
+                            <option value="09">9</option>
+                            <option value="10">10</option>
+                        </select>
+                        <select name="year" id="year">
+                            <option value="">Năm</option>
+                            <option value="2010">2010</option>
+                            <option value="2011">2011</option>
+                            <option value="2012">2012</option>
+                            <option value="2013">2013</option>
+                            <option value="2014">2014</option>
+                            <option value="2015">2015</option>
+                            <option value="2016">2016</option>
+                            <option value="2017">2017</option>
+                            <option value="2018">2018</option>
+                        </select>
+                    </div>
+                    <div class="info__input--select">
+                        <select name="salary" id="salary">
+                            <option value="VND">VND</option>
+                            <option value="USD">USA</option>
+                            <input type="text" name="salary" id="salary1">
+                        </select>
+                    </div>
+                    <div class="textarea">
+                        <textarea name="textarea" id="textarea1" cols="43" rows="8"></textarea>
+                        <textarea name="textarea" id="textarea2" cols="43" rows="8"></textarea>
+                    </div>
+                    <div>
+                        <button class="btn-save">
+                            <i class='bx bx-save'></i>
+                            Lưu
+                        </button>
+                        <button class="btn-notsave">
+                            <i class='bx bx-x'></i>
+                            không lưu
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        .form-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .login-title {
+            display: flex;
+            justify-content: center;
+            font-size: 25px;
+            margin-bottom: 50px;
+        }
+
+        input[type="text"],
+      input[type="password"] {
+        padding: 8px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        height: 40px;
+        width: 100%;
+      }
+
+      .btn-login {
+        background-color: red;
+        color: white;
+        padding: 12px 20px;
+        margin: 30px 0 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        width: 100%;
+      }
+
+      .btn-login:hover {
+        background-color: #B22222;
+      }
+
+      .btn-register {
+        background-color: black;
+        color: #FFFFFF;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        width: 100%;
+        margin-bottom: 50px;
+      }
+
+      .btn-register:hover {
+        background-color: #282828;
+      }
+
+      .form {
+        background-color: #f2f2f2;
+        padding: 20px;
+        border-radius: 5px;
+        width: 400px;
+        max-width: 90%;
+      }
+
+      .hr {
+        display: flex;
+        border: 0.01px black solid;
+        width: 100%;
+        margin: 16px auto;
+        position: relative;
+      }
+
+      .hr::before{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+      content: "hoặc";
+      display: block;
+      padding: 4px;
+      background-color: #f2f2f2;
+      font-size: 20px;
+    }
+
+    a {
+      margin-left: 150px;
+      text-decoration: none;
+      
+    }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <form class="form">
+          <span class="login-title">Đăng nhập</span>
+          <input type="text" id="username" name="username" placeholder="Tài khoảng Garena, Email hoặc số điện thoại" required>
+          <input type="password" id="password" name="password" placeholder="Mật khẩu" required>
+          <button type="submit" class="btn-login">Đăng nhập ngay</button>
+          <span class="hr"></span>
+          <button type="submit" class="btn-register">Tạo tài khoản mới</button>
+          <a href="#">Quên mật khẩu ?</a>
+        </form>
+      </div>
+</body>
+</html>

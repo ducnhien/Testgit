@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Info</title>
+    <style>
+        .container {
+            /* background-color: aqua; */
+            display: block;
+            height: 65vh;
+            width: 120vh;
+            box-shadow: 3px 3px 3px 3px #888;
+        }
+
+        .form {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            width: 110vh;
+            margin: 10px;
+            padding: 10px;
+        }
+
+        .text {
+            font-size: 18px;
+            color: #4682B4;
+        }
+
+        .hr {
+            width: 5px;
+            height: 25px;
+            background-color: red;
+            margin-right: 10px;
+        }
+
+        hr {
+            background-color: #ccc;
+            width: 60%;
+            height: 0.5px;
+        }
+
+        #select {
+            height: 30px;
+            border-radius: 4px;
+            border:3px solid #ccc;
+        }
+
+        .info {
+            margin-top: 10px;
+            background-color: #E0E0E0;
+            height: 150px;
+            width: 125px;
+            margin-left: 20px;
+            text-align: center;
+        }
+
+        .report {
+            position:absolute;
+            padding:50px 5px 20px 5px;
+            display:block;
+            font-size: 20px;
+            color: #808080;
+        }
+        .btn{
+            margin-top: 5px;
+            padding:10px 17px 10px 17px;
+            border:1px solid #ccc;
+            margin-left: 20px;
+            border-radius: 3px ;
+            background-color: #686868;
+            color:white;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #585858;
+        }
+
+        .info-text{
+            display:flex;
+            flex-direction: column;
+            align-items: end;
+            position: absolute;
+            margin-left: 15%;
+            margin-top: 10px;
+        }
+
+        .a {
+            margin-bottom: 35px;
+            font-size: 18px;
+        }
+
+        .info-inp {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            margin-left: 25%;
+            margin-top: 10px;
+        }
+
+        #username {
+            margin-top: -5px;
+            padding-right: 150px;
+            width: 100%;
+            height: 30px;
+            border: 2px solid #ccc;
+            border-radius: 2px;
+        }
+
+        #tel {
+            margin-top: 18px;
+            padding-right: 150px;
+            width: 100%;
+            height: 30px;
+            border: 2px solid #ccc;
+            border-radius: 2px;
+        }
+
+        #day,
+        #month,
+        #year {
+            margin-top: 24px;
+            margin-right: 10px;
+            width: 70px;
+            height: 28px;
+            border: 2px solid #ccc;
+            border-radius: 2px;
+        }
+
+        #sex {
+            margin-top: 26px;
+            height: 30px;
+            width: 150%;
+            border: 2px solid #ccc;
+            border-radius: 2px;
+        }
+
+        #FA {
+            margin-top: 26px;
+            height: 30px;
+            width: 150%;
+            border: 2px solid #ccc;
+            border-radius: 2px;
+        }
+
+        #address {
+            margin-top: 26px;
+            height: 30px;
+            width: 150%;
+            border: 2px solid #ccc;
+            border-radius: 2px;
+        }
+
+        #text {
+            margin-top: 26px;
+            height: 30px;
+            padding-right: 50%;
+            width: 100%;
+            border: 2px solid #ccc;
+            border-radius: 2px;
+        }
+
+        .btn-save {
+            margin-top: 20px;
+            height: 50px;
+            width: 90px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            background-color: red;
+            color: white;
+        }
+
+        .btn-save:hover {
+            background-color: #DC143C;
+        }
+
+        .bx {
+            font-size: 22px;
+        }
+        
+        .A {
+            text-decoration: none;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form">
+            <span class="hr"></span>
+            <span class="text"><b>Thông tin tài khoảng</b> <i>(bắt buộc)</i></span>
+            <hr>
+            <select name="select" id="select">
+                <option value="RG">Rút gọn</option>
+                <option value="MR">Mở rộng</option>
+            </select>  
+        </div>
+        <div class="info-text">
+            <span class="a">Họ tên <a href="#" class="A">*</a></span>
+            <span class="a">Số điện thoại <a href="#" class="A">*</a></span>
+            <span class="a">Ngày sinh <a href="#" class="A">*</a></span>
+            <span class="a">Giới tính <a href="#" class="A">*</a></span>
+            <span class="a">Hôn nhân <a href="#" class="A">*</a></span>
+            <span class="a">Tỉnh/Thành Phố <a href="#" class="A">*</a></span>
+            <span class="a">Chỗ ở hiện tại <a href="#" class="A">*</a></span>
+        </div>
+        <div class="info-inp">
+            <input type="text" name="username" id="username">
+            <input type="tel" name="tel" id="tel">
+            <div class="date">
+                <select name="day" id="day">
+                    <option value="01">1</option>
+                    <option value="02">2</option>
+                    <option value="03">3</option>
+                    <option value="04">4</option>
+                </select>
+                <select name="month" id="month">
+                    <option value="01">1</option>
+                    <option value="02">2</option>
+                    <option value="03">3</option>
+                    <option value="04">4</option>
+                    <option value="05">5</option>
+                    <option value="06">6</option>
+                    <option value="07">7</option>
+                    <option value="08">8</option>
+                    <option value="09">9</option>
+                    <option value="10">10</option>
+                </select>
+                <select name="year" id="year">
+                    <option value="1980">1980</option>
+                    <option value="1981">1981</option>
+                    <option value="1982">1982</option>
+                    <option value="1983">1983</option>
+                    <option value="1984">1984</option>
+                    <option value="1985">1985</option>
+                    <option value="1986">1986</option>
+                    <option value="1987">1987</option>
+                </select>
+            </div>
+            <select name="sex" id="sex">
+                <option value="man">Nam</option>
+                <option value="women">Nữ</option>
+            </select>
+            <select name="FA" id="FA">
+                <option value="">Chọn tình trạng hôn nhân</option>
+                <option value="KH">Kết hôn</option>
+                <option value="FA">Độc thân</option>
+            </select>
+            <select name="address" id="address">
+                <option value="DN">Đà Nẵng</option>
+                <option value="QN">Quảng Nam</option>
+                <option value="HUE">Huế</option>
+                <option value="QB">Quảng Bình</option>
+                <option value="QT">Quảng Trị</option>
+            </select>
+            <input type="text" name="text" id="text">
+            <button class="btn-save">
+                <i class='bx bxs-save'></i>
+                Lưu
+            </button>
+        </div>
+        <div class="info">
+            <span class="report">Chưa cập nhật <br> Hình ảnh</span>
+        </div>
+        
+        <button class="btn">
+            <i class='bx bx-image' style="font-size: 15px;"></i>
+            Chọn Avatar
+        </button>
+    </div>
+</body>
+</html>

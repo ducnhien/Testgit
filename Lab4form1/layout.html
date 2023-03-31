@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout</title>
+    <style>
+        .form-layout {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .form {
+        background-color: #f2f2f2;
+        width: 400px;
+        height: 325px;
+        max-width: 90%;
+      }
+
+      .header {
+        background-color: aquamarine;
+        height: 40px;
+        width: 90%;
+        margin-left: 20px;
+      }
+
+      span {
+        font-size: 15px;
+        margin: 5px;
+      }
+
+      .text {
+        font-size: 15px;
+        font-weight: 100;
+        margin: 10px;
+      }
+
+      .content {
+        background-color: #FFB6C1;
+        height: 235px;
+      }
+
+      .entry {
+        background-color: aqua;
+        width: 60%;
+        height: 60px;
+        margin: 5px 0 10px 10px;
+      }
+
+      .sidebar {
+        position: relative;
+        left: 240px;
+        top: -210px;
+        width: 30%;
+        height: 85%;
+        background-color: aqua;
+      }
+
+      .footer {
+        background-color: #00FF7F;
+        height: 40px;
+      }
+    </style>
+</head>
+<body>
+    <div class="form-layout">
+        <form class="form">
+            <span class="text">PAGE</span>
+            <div class="header">
+                <span>HEADER</span>
+                <div class="content">
+                    <span>CONTENT</span>
+                    <div class="entry">
+                        <span>ENTRY</span>
+                    </div>
+                    <div class="entry">
+                        <span>ENTRY</span>
+                    </div>
+                    <div class="entry">
+                        <span>ENTRY</span>
+                    </div>
+                    <div class="sidebar">
+                        <span>SIDEBAR</span>
+                    </div>
+                </div>
+                <div class="footer">
+                    <span>FOOTER</span>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
