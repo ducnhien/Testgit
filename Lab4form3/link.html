@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Liên kết</title>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .form {
+            display: flex;
+            flex-direction: column;
+            width: 20%;
+            height: 50%;
+            box-shadow: 1px 1px 1px 1px #ccc;
+            border-radius: 3px;
+        }
+
+        .link {
+            height: 35px;
+        }
+
+        .link__test {
+            padding: 10px;
+            border: 1px solid black;
+            border-radius: 3px;
+            background-color: #4682B4;
+            color: white;
+        }
+
+        .bx {
+            font-size: 10px;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            width: 245px;
+            margin-left: 15px;
+            border: 1px solid #ccc;
+            box-shadow: 1px 1px 1px 1px #ccc;
+            border-radius: 3px;
+        }
+
+        a {
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form class="form">
+            <hr>
+            <div class="link">
+                <span class="link__test">
+                    Link liên kết
+                    <i class='bx bxs-down-arrow'></i>
+                </span>
+            </div>
+            <div class="content">
+                <a href="http://vku.udn.vn/" target="_blank">Trường ĐH CNTT&TT Việt Hàn</a>
+                <a href="https://www.24h.com.vn/" target="_blank">Tin tức 24h</a>
+                <a href="https://vnexpress.net/"  target="_blank">Tin tức Vietnamnet</a>
+                <a href="https://genk.vn/" target="_blank">Tin công nghệ</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
