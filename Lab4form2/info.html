@@ -63,20 +63,22 @@
             padding:50px 5px 20px 5px;
             display:block;
             font-size: 20px;
+            /* width: 125px; */
             color: #808080;
         }
-        .btn{
+        button{
             margin-top: 5px;
             padding:10px 17px 10px 17px;
             border:1px solid #ccc;
             margin-left: 20px;
             border-radius: 3px ;
+            width: 125px;
             background-color: #686868;
             color:white;
             cursor: pointer;
         }
 
-        .btn:hover {
+        button:hover {
             background-color: #585858;
         }
 
@@ -268,10 +270,8 @@
             <span class="report">Chưa cập nhật <br> Hình ảnh</span>
         </div>
         
-        <button class="btn">
-            <i class='bx bx-image' style="font-size: 15px;"></i>
-            Chọn Avatar
-        </button>
+        <input type="file" id="myFileUpload" accept="image/*" style="display:none">
+        <button onclick="document.getElementById('myFileUpload').click()">Chọn ảnh</button>
     </div>
 </body>
 </html>
