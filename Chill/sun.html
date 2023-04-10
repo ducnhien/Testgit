@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Mặt trời</title>
+	<style type="text/css">
+		body {
+			background-color: #2c3e50;
+		}
+		.sun {
+            background-image: url(./sun.png);
+            background-size: cover;
+			width: 100px;
+			height: 100px;
+			border-radius: 50%;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin-left: -50px;
+			margin-top: -50px;
+			animation: sunny 0.4s infinite;
+		}
+		.earth {
+			background-color: #3498db;
+			width: 30px;
+			height: 30px;
+			border-radius: 50%;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			animation: orbit 5s linear infinite;
+		}
+		.earth::before {
+			content: "";
+			display: block;
+			background-color: #fff;
+			width: 5px;
+			height: 5px;
+			border-radius: 50%;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+		@keyframes orbit {
+			from {
+				transform: rotate(0deg) translateX(100px) rotate(0deg);
+			}
+			to {
+				transform: rotate(360deg) translateX(200px) rotate(-360deg);
+			}
+		}
+		@keyframes sunny {
+			from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+		}
+	</style>
+</head>
+<body>
+	<div class="sun"></div>
+	<div class="earth"></div>
+</body>
+</html>
