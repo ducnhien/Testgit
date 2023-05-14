@@ -1,33 +1,122 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <style>
-    .container {
-  display: flex; /* Thiết lập hiển thị thành flexbox */
-  flex-direction: row; /* Thiết lập chiều dài dòng của flexbox */
-}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+	<title>Thanh giỏ hàng trượt từ phải sang trái</title>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+		}
 
-.main-content {
-  flex: 1; /* Thiết lập độ rộng linh hoạt */
-}
+		/* Style cho biểu tượng giỏ hàng */
+		.fa-shopping-cart {
+			position: fixed;
+			top: 20px;
+			right: 20px;
+			font-size: 30px;
+			color: #fff;
+			background-color: #333;
+			padding: 10px;
+			border-radius: 50%;
+			cursor: pointer;
+			z-index: 999;
+		}
 
-.sidebar {
-  width: 20%; /* Thiết lập độ rộng cố định */
-}
-  </style>
+		/* Style cho thanh giỏ hàng */
+		.cart-container {
+			position: fixed;
+			top: 0;
+			right: -300px;
+			width: 300px;
+			background-color: #fff;
+			height: 100%;
+			transition-duration: 0.5s;
+			z-index: 999;
+			box-shadow: 0 0 10px rgba(0,0,0,0.3);
+			padding: 20px;
+		}
+
+		.cart-container h3 {
+			margin-top: 0;
+			text-align: center;
+		}
+
+		.cart-container .close-btn {
+			position: absolute;
+			top: 10px;
+			right: 10px;
+			font-size: 20px;
+			color: #333;
+			cursor: pointer;
+		}
+
+		.cart-container ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+
+		.cart-container ul li {
+			display: flex;
+			align-items: center;
+			margin-bottom: 20px;
+		}
+
+		.cart-container ul li img {
+			width: 50px;
+			margin-right: 10px;
+		}
+
+		.cart-container ul li p {
+			margin: 0;
+			flex-grow: 1;
+		}
+
+		.cart-container ul li span {
+			font-weight: bold;
+		}
+	</style>
 </head>
 <body>
-  <div class="container">
-    <div class="main-content">
-      Nội dung chính
-    </div>
-    <div class="sidebar">
-      Sidebar
-    </div>
-  </div>  
+	<a href="#" class="fa fa-shopping-cart"></a>
+
+	<div class="cart-container">
+		<h3>Giỏ hàng</h3>
+		<span class="close-btn">&times;</span> <!-- Nút đóng thanh giỏ hàng -->
+		<ul>
+			<li>
+				<img src="https://via.placeholder.com/50x50" alt="Product image">
+				<p>Product name</p>
+				<span>$10</span>
+			</li>
+			<li>
+				<img src="https://via.placeholder.com/50x50" alt="Product image">
+				<p>Product name</p>
+				<span>$20</span>
+			</li>
+			<li>
+				<img src="https://via.placeholder.com/50x50" alt="Product image">
+				<p>Product name</p>
+				<span>$30</span>
+			</li>
+		</ul>
+	</div>
+
+	<script>
+		const cartBtn = document.querySelector('.fa-shopping-cart');
+		const cartContainer = document.querySelector('.cart-container');
+		const closeBtn = document.querySelector('.close-btn');
+
+		// Sự kiện nhấp chuột vào biểu tượng giỏ hàng
+		cartBtn.addEventListener('click', function() {
+			cartContainer.style.right = '0'; // Hiển thị thanh giỏ hàng bằng cách di chuyển từ phải sang trái
+		});
+
+		// Sự kiện nhấp chuột vào nút đóng trong thanh giỏ hàng
+		closeBtn.addEventListener('click', function() {
+			cartContainer.style.right = '-300px'; // Ẩn thanh giỏ hàng bằng cách đẩy sang phải
+		});
+	</script>
 </body>
 </html>
