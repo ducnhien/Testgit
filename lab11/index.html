@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        header {
+            display: flex;
+            justify-content: center;
+            background: #2980b9;
+        }
+
+        header nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 40px;
+            width: 100%;
+        }
+
+        header nav a {
+            text-decoration: none;
+            text-transform: uppercase;
+            text-align: center;
+            margin: 0 20px;
+            justify-content: center;
+            color: #fff;
+        }
+
+        .banner img {
+            width: 100%;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: row;
+            background: #ffffff;
+        }
+
+        .content .left-content {
+            width: 30%;
+            padding: 5px 10px;
+            border-right: 1px solid #ccc;
+        }
+
+        .content .left-content img {
+            width: 100%;
+        }
+
+        .content .left-content span {
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .content .center-content {
+            width: 50%;
+            padding: 5px 10px;
+        }
+
+        .content .center-content .content-1 {
+            margin: 10px 10px;
+        }
+
+        .content .right-content {
+            width: 20%;
+            margin-top: 10px;
+        }
+
+        .content .right-content .title {
+            display: block;
+            text-align: center;
+            padding: 10px;
+            border: 1px solid #9c9c9c;
+            background: #d0d0d0;
+            height: 50px;
+            text-decoration: none;
+            text-transform: uppercase;
+            color: red;
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .content .right-content .list ul {
+            margin: 0;
+        }
+
+        .content .right-content .list ul li {
+            padding: 20px 0;
+            border-bottom: 1px solid #ccc;
+        }
+
+        footer {
+            margin-top: 20px;
+        }
+
+        footer .creadit {
+            color: #666666;
+            font-weight: 600;
+        }
+
+        footer span {
+            color: #9c9c9c;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <header>
+        <nav>
+            <a href="#">trang chủ</a>
+            <a href="#">giới thiệu</a>
+            <a href="#">cơ cấu tổ chức</a>
+            <a href="#">đảng ủy - đoàn thể</a>
+            <a href="#">đào tạo</a>
+            <a href="#">thư viện</a>
+            <a href="#">lịch tuần</a>
+            <a href="#">email</a>
+            <a href="#">ufls channel</a>
+        </nav>
+    </header>
+
+    <!-- Banner -->
+    <div class="banner">
+        <img src="hinh1.jpg" alt="">
+    </div>
+
+    <!-- Main content -->
+    <section class="content">
+
+        <div class="left-content">
+            <img src="hinh2.jpg" alt="">
+            <span>Chiếu phim "Bình Minh đỏ" chào mừng 47 năm Giải phóng miền Nam (28/04/2022)</span>
+        </div>
+
+
+        <div class="center-content">
+            <div class="content-1" style="display: flex; justify-content: center; align-items: center; padding-bottom: 10px; border-bottom: 1px solid #ccc;">
+                <img src="hinh3.jpg" alt="" style="height: 150px; width: 250px; margin-right: 10px;">
+                <span style="font-size: 15px; font-weight: 600;">Bản tin tiếng Anh số 05, Quý 1/2022 Trường Đại học Ngoại ngữ - Đại học Đà Nẵng (28/04/2022)</span>
+            </div>
+            <div class="content-1" style="display:  flex; align-items: center; border-bottom: 1px solid #ccc; padding-bottom: 5px;">
+                <img src="hinh4.jpg" alt="" style="width: 250px; margin-right: 10px;">
+                <span style="font-size: 15px; font-weight: 600;">Tiếp đoàn công tác kiểm tra Công tác Hội và phòng đào tạo sinh viên từ BCH Hội Sinh viên Việt Nam thành...(28/04/2022)</span>
+            </div>
+            <span style="font-size: 15px; font-weight: 600;">Hiến máu cứu người - Sinh mệnh của bạn và tôi (23/04/2022)</span>
+        </div>
+
+        <div class="right-content">
+            
+            <a href="#" class="title">tuyển sinh 2022</a>
+
+            <div class="list" style="border-left: 1px solid #ccc;">
+                <ul>
+                    <li>Thông báo về việc tổ chức kỳ thi NAT-TEST ngày 12/06/2022 tại trường ĐHNN-ĐHĐN (26/04/2022)</li>
+                    <li>Thông báo thu học phí học kỳ II năm học 2021-2022 hệ chính quy (đợt 02) (11/04/2022)</li>
+                    <li style="border-bottom: none;">Danh sách phòng thi và số báo danh của thí sinh NAT-TEST ngày thi 03/04/2022(30/03/2022)</li>
+                </ul>
+            </div>
+
+        </div>
+
+    </section>
+
+    <footer>
+        <div class="creadit">Bản quyền thuộc Trường Đại học Ngoại ngữ - ĐHĐN</div>
+        <span>Address: 131 Lương Nhữ Hộc, Phường Khuê Trung, Quận Cẩm Lệ, TP Đà Nẵng</span>
+        <br>
+        <span>Tel: (+84) 236. 3699324 Fax:+84 236 3699338 - Email: dhnn@ufl.udn.vn</span>
+    </footer>
+</body>
+</html>
