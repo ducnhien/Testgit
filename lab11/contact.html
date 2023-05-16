@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            display: flex;
+            justify-content: center;
+            background: #2980b9;
+            width: 100%;
+        }
+
+        header nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 40px;
+            width: 100%;
+        }
+
+        header nav a {
+            text-decoration: none;
+            text-transform: uppercase;
+            text-align: center;
+            margin: 0 20px;
+            justify-content: center;
+            color: #fff;
+        }
+
+        .banner img {
+            width: 100%;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 40%;
+            background: #e1e1e1;
+            padding-top: 10px;
+        }
+
+        form .title {
+            text-transform: uppercase;
+            color: red;
+            font-size: 30px;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        form span {
+            color: red;
+            text-transform: capitalize;
+        }
+
+        form input {
+            width: 80%;
+            height: 35px;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+
+        form .btn {
+            height: 40px;
+            width: 80px;
+            border: none;
+            border-radius: 3px;
+            margin-bottom: 10px;
+            background: green;
+            color: yellow;
+            cursor: pointer;
+            transition: background .5s;
+        }
+
+        .btn:hover {
+            background: goldenrod;
+            color: #fff;
+        }
+
+        footer {
+            width: 100%;
+            margin-top: 30px;
+        }
+
+        footer .creadit {
+            color: #666666;
+            font-weight: 600;
+        }
+
+        footer span {
+            color: #9c9c9c;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <header>
+        <nav>
+            <a href="index.html">trang chủ</a>
+            <a href="#">giới thiệu</a>
+            <a href="#">cơ cấu tổ chức</a>
+            <a href="#">đảng ủy - đoàn thể</a>
+            <a href="#">đào tạo</a>
+            <a href="#">thư viện</a>
+            <a href="#">lịch tuần</a>
+            <a href="#">email</a>
+            <a href="#">ufls channel</a>
+        </nav>
+    </header>
+
+    <!-- Banner -->
+    <div class="banner">
+        <img src="hinh1.jpg" alt="">
+    </div>
+
+    <!-- Form content -->
+    <form action="">
+        <span class="title">liên hệ</span>
+        <span>họ và tên</span>
+        <input type="text" name="" placeholder="Nhập họ và tên...">
+        <span>Email</span>
+        <input type="email" name="" placeholder="Nhập email...">
+        <span>số điện thoại</span>
+        <input type="tel" name="" placeholder="Nhập số điện thoại...">
+        <span>địa chỉ</span>
+        <input type="text" placeholder="Nhập địa chỉ...">
+
+        <button class="btn">GỬI</button>
+    </form>
+
+    <!-- Footer -->
+    <footer>
+        <div class="creadit">Bản quyền thuộc Trường Đại học Ngoại ngữ - ĐHĐN</div>
+        <span>Address: 131 Lương Nhữ Hộc, Phường Khuê Trung, Quận Cẩm Lệ, TP Đà Nẵng</span>
+        <br>
+        <span>Tel: (+84) 236. 3699324 Fax:+84 236 3699338 - Email: dhnn@ufl.udn.vn</span>
+    </footer>
+</body>
+</html>
