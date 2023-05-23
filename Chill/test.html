@@ -1,122 +1,209 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-	<title>Thanh giỏ hàng trượt từ phải sang trái</title>
-	<style>
-		body {
-			margin: 0;
-			padding: 0;
-		}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function cau1() {
+        alert("Hi, welcome to javascript");
+      }
 
-		/* Style cho biểu tượng giỏ hàng */
-		.fa-shopping-cart {
-			position: fixed;
-			top: 20px;
-			right: 20px;
-			font-size: 30px;
-			color: #fff;
-			background-color: #333;
-			padding: 10px;
-			border-radius: 50%;
-			cursor: pointer;
-			z-index: 999;
-		}
+      function cau2() {
+        var displayPage = confirm("Do you want to display this page ?");
 
-		/* Style cho thanh giỏ hàng */
-		.cart-container {
-			position: fixed;
-			top: 0;
-			right: -300px;
-			width: 300px;
-			background-color: #fff;
-			height: 100%;
-			transition-duration: 0.5s;
-			z-index: 999;
-			box-shadow: 0 0 10px rgba(0,0,0,0.3);
-			padding: 20px;
-		}
+        if (displayPage) {
+          document.write("This page to display!");
+        } else {
+          document.write("This page to not display");
+        }
+      }
 
-		.cart-container h3 {
-			margin-top: 0;
-			text-align: center;
-		}
+      function cau3() {
+        var userName = prompt("Enter your name:");
 
-		.cart-container .close-btn {
-			position: absolute;
-			top: 10px;
-			right: 10px;
-			font-size: 20px;
-			color: #333;
-			cursor: pointer;
-		}
+        if (userName != null && userName !== "") {
+          alert("Hi, " + userName + ".How are you?");
+        } else {
+          alert("No name");
+        }
+      }
 
-		.cart-container ul {
-			list-style: none;
-			margin: 0;
-			padding: 0;
-		}
+      function cau4() {
+        var num1 = Number(prompt("Enter first number: "));
+        var num2 = Number(prompt("Enter second number: "));
 
-		.cart-container ul li {
-			display: flex;
-			align-items: center;
-			margin-bottom: 20px;
-		}
+        var sum = num1 + num2;
+        var diff = num1 + num2;
+        var prod = num1 * num2;
+        var quotient = num1 / num2;
 
-		.cart-container ul li img {
-			width: 50px;
-			margin-right: 10px;
-		}
+        document.write(num1 + " + " + num2 + " = " + sum + "<br>");
+        document.write(num1 + " - " + num2 + " = " + diff + "<br>");
+        document.write(num1 + " * " + num2 + " = " + prod + "<br>");
+        document.write(num1 + " / " + num2 + " = " + quotient + "<br>");
+      }
 
-		.cart-container ul li p {
-			margin: 0;
-			flex-grow: 1;
-		}
+      function cau5() {
+        var a = Number(prompt("Enter a: "));
+        var b = Number(prompt("Enter b: "));
 
-		.cart-container ul li span {
-			font-weight: bold;
-		}
-	</style>
-</head>
-<body>
-	<a href="#" class="fa fa-shopping-cart"></a>
+        if (a === 0) {
+          if (b === 0) {
+            document.write("Phương trình vô sô nghiệm");
+          } else {
+            document.write("Phương trình vô nghiệm");
+          }
+        } else {
+          var x = -b / a;
+          document.write("Ngiệm của phương trình là x = " + x);
+        }
+      }
 
-	<div class="cart-container">
-		<h3>Giỏ hàng</h3>
-		<span class="close-btn">&times;</span> <!-- Nút đóng thanh giỏ hàng -->
-		<ul>
-			<li>
-				<img src="https://via.placeholder.com/50x50" alt="Product image">
-				<p>Product name</p>
-				<span>$10</span>
-			</li>
-			<li>
-				<img src="https://via.placeholder.com/50x50" alt="Product image">
-				<p>Product name</p>
-				<span>$20</span>
-			</li>
-			<li>
-				<img src="https://via.placeholder.com/50x50" alt="Product image">
-				<p>Product name</p>
-				<span>$30</span>
-			</li>
-		</ul>
-	</div>
+      function cau6() {
+        var a = Number(prompt("Nhập hệ số a: "));
+        var b = Number(prompt("Nhập hệ số b: "));
+        var c = Number(prompt("Nhập hệ số c: "));
 
-	<script>
-		const cartBtn = document.querySelector('.fa-shopping-cart');
-		const cartContainer = document.querySelector('.cart-container');
-		const closeBtn = document.querySelector('.close-btn');
+        if (a === 0) {
+          if (b === 0) {
+            if (c === 0) {
+              document.write("Phương trình có vô số nghiệm");
+            } else {
+              document.write("Phương trình vô nghiệm");
+            }
+          } else {
+            var x = -c / b;
+            document.write("Nghiệm của phương trình là x = " + x);
+          }
+        } else {
+          var delta = b * b - 4 * a * c;
+          if (delta < 0) {
+            document.write("Phương trình vô nghiệm");
+          } else if (delta === 0) {
+            var x = -b / (2 * a);
+            document.write("Phương trình có nghiệm kép x = " + x);
+          } else {
+            var x1 = (-b + Math.sqrt(delta)) / (2 * a);
+            var x2 = (-b - Math.sqrt(delta)) / (2 * a);
+            document.write(
+              "Phương trình có hai nghiệm phân biệt: x1 = " +
+                x1 +
+                ", x2 = " +
+                x2
+            );
+          }
+        }
+      }
 
-		// Sự kiện nhấp chuột vào biểu tượng giỏ hàng
-		cartBtn.addEventListener('click', function() {
-			cartContainer.style.right = '0'; // Hiển thị thanh giỏ hàng bằng cách di chuyển từ phải sang trái
-		});
+      function cau7() {
+        var num1 = parseInt(prompt("Nhập số thứ nhất: "));
+        var num2 = parseInt(prompt("Nhập số thứ hai: "));
+        var result = parseInt(prompt("Tính tổng của " + num1 + " và " + num2));
 
-		// Sự kiện nhấp chuột vào nút đóng trong thanh giỏ hàng
-		closeBtn.addEventListener('click', function() {
-			cartContainer.style.right = '-300px'; // Ẩn thanh giỏ hàng bằng cách đẩy sang phải
-		});
-	</script>
-</body>
+        if (result === num1 + num2) {
+          document.write("Correct");
+        } else {
+          document.write("Incorrect");
+        }
+      }
+
+      function cau8() {
+        var className = prompt("Nhập tên lớp: ");
+
+        // Sử dụng biểu thức chính quy để kiểm tra định dạng tên lớp
+        var classRegex = /^20IT\d$/;
+
+        if (classRegex.test(className)) {
+          document.write("Tên lớp hợp lệ: " + className);
+        } else {
+          document.write("Tên lớp không hợp lệ");
+        }
+      }
+
+      function cau9() {
+        var studentId = prompt("Nhập mã sinh viên: ");
+
+        // Sử dụng biểu thức chính quy để kiểm tra định dạng mã sinh viên
+        var studentIdRegex = /^20IT\d{3}$/;
+
+        if (studentIdRegex.test(studentId)) {
+          document.write("Mã sinh viên hợp lệ: " + studentId);
+        } else {
+          document.write("Mã sinh viên không hợp lệ");
+        }
+      }
+
+      function cau10() {
+        var name;
+
+        do {
+          name = prompt("Nhập tên của bạn: ");
+        } while (name === "");
+
+        document.write(
+          "Chào mừng " + name + " đến với trang web của chúng tôi!"
+        );
+      }
+
+      function cau11() {
+        var age;
+
+        do {
+          age = prompt("Nhập tuổi của bạn: ");
+
+          if (isNaN(age) || age < 1 || age > 129) {
+            alert(
+              "Tuổi phải là một số lớn hơn một và nhỏ hơn 130. Vui lòng nhập lại!"
+            );
+            age = undefined;
+          }
+        } while ((age = undefined));
+
+        document.write("Tuổi của bạn là: " + age);
+      }
+
+      function cau12() {
+        var arr = [];
+
+        for (var i = 1; i <= 5; i++) {
+          var element = prompt("Nhập phần tử " + i + ": ");
+
+          arr.push(element);
+        }
+
+        document.write("Mảng sau khi khởi tạo: " + arr + "<br>");
+        document.write(
+          "Mảng sau khi sắp xếp: " +
+            arr.sort(function (a, b) {
+              return a - b;
+            })
+        );
+      }
+
+	  function cau13() {
+		var input = prompt("Nhập vào chuỗi: ");
+
+		var output = input.replace(/a/g, "VietHan");
+
+		alert(output);
+	  }
+    </script>
+  </head>
+  <body>
+    <input type="button" value="Câu 1" onclick="cau1()" />
+    <input type="button" value="Câu 2" onclick="cau2()" />
+    <input type="button" value="Câu 3" onclick="cau3()" />
+    <input type="button" value="Câu 4" onclick="cau4()" />
+    <input type="button" value="Câu 5" onclick="cau5()" />
+    <input type="button" value="Câu 6" onclick="cau6()" />
+    <input type="button" value="Câu 7" onclick="cau7()" />
+    <input type="button" value="Câu 8" onclick="cau8()" />
+    <input type="button" value="Câu 9" onclick="cau9()" />
+    <input type="button" value="Câu 10" onclick="cau10()" />
+    <input type="button" value="Câu 11" onclick="cau11()" />
+    <input type="button" value="Câu 12" onclick="cau12()" />
+	<input type="button" value="Câu 13" onclick="cau13()" />
+  </body>
 </html>

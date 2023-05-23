@@ -1,25 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script type="text/javascript">
-        function vidu() {
-            var number = document.getElementById(number);
-            number = parseInt(number);
+      function vidu() {
+        // for (var i=1;i<=50;i++) {
+        //     document.write(i + '\n');
+        // }
 
-            for (var i=1;i<=50;i++) {
-                document.write(i + '\n');
-            }
+        // for(var i=1;i<=50;i++){
+        //     if(i%2!==0){
+        //         document.write(i + '\n');
+        //     }
+        // }
+
+        // for (var i=1;i<20;i++) {
+        //     var j = Math.floor(Math.random()*100) + 1;
+        //     document.write(j + "\n");
+        // }
+
+        // var arr = [];
+
+        // for (var i = 0; i < 20; i++) {
+        //   var randomNumber = Math.floor(Math.random() * (999 - 100 + 1)) + 100;
+        //   arr.push(randomNumber);
+        // }
+
+        // document.write(arr);
+
+        var min = parseInt(document.getElementById("min").value);
+        var max = parseInt(document.getElementById("max").value);
+        var n = parseInt(document.getElementById("n").value);
+        var rs = document.getElementById("result");
+        if (isNaN(min) || isNaN(max) || min >= max) {
+          alert("Vui lòng nhập lại min và max!");
+        } else {
+            rs.textContent = "";
+            for (var i = 0; i < n; i++) {
+                var randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+                rs.innerHTML += randomNumber + "|";
+          }
         }
+      }
     </script>
-</head>
-<body>
+  </head>
+  <body>
     <form action="">
-        <input type="text" name="" id="number">
-        <input type="submit" name="" value="Click me" onclick="vidu()">
+      <input type="number" id="min" />
+      <input type="number" id="max" />
+      <input type="number" id="n" />
+      <input type="button" name="" value="Click me" onclick="vidu()" />
     </form>
-</body>
+    <div id="result"></div>
+  </body>
 </html>
