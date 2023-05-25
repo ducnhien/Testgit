@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="button" value="Bài 1" onclick="bai1()" />
+    <input type="button" value="Bài 2" onclick="bai2()" />
+
+    <form>
+      <h3>Bài 3</h3>
+      <label for="operation">Nhập phép tính:</label>
+      <input type="text" id="operation" name="operation" />
+      <button type="button" onclick="bai3()">Tính toán</button>
+    </form>
+
+    <form>
+      <h3>Bài 4</h3>
+      <input type="text" id="inputNumber" placeholder="Nhập một số" />
+      <p id="errorMessage" style="color: red"></p>
+      <p id="successMessage" style="color: green"></p>
+    </form>
+
+    <p id="result"></p>
+    <script>
+      function bai1() {
+        // Yêu cầu người dùng nhập vào một số
+        var x = prompt("Nhập vào một số: ");
+
+        // Chuyển đổi giá trị x thành kiểu số (nếu là kiểu chuỗi)
+        x = parseFloat(x);
+
+        // Tính toán sin, cos và tan của x
+        var sinValue = Math.sin(x);
+        var cosValue = Math.cos(x);
+        var tanValue = Math.tan(x);
+
+        // Hiển thị kết quả
+        document.write("Sin " + x + " = " + sinValue + "<br>");
+        document.write("Cos " + x + " = " + cosValue + "<br>");
+        document.write("Tan " + x + " = " + tanValue + "<br>");
+      }
+
+      function bai2() {
+        var arr = new Array("red", "green", "blue");
+        for (let it in arr) {
+          document.write("color " + it + " : " + arr[it] + "<br>");
+        }
+      }
+
+      function bai3() {
+        var operation = document.getElementById("operation").value;
+        var result = eval(operation);
+
+        document.getElementById("result").innerHTML = "Kết quả: " + result;
+      }
+
+      function bai4() {
+        var input = document.getElementById("inputNumber");
+        var error = document.getElementById("errorMessage");
+        var success = document.getElementById("successMessage");
+
+        function checkInput() {
+          var value = input.value;
+
+          // Kiểm tra giá trị đầu vào có phải là số hay không
+          if (isNaN(value) || value === "") {
+            error.innerHTML = "Vui lòng nhập vào một số";
+            success.innerHTML = "";
+          } else {
+            error.innerHTML = "";
+            success.innerHTML = "Cảm ơn bạn đã nhập vào một số";
+          }
+        }
+
+        input.addEventListener("input", checkInput);
+      }
+    </script>
+  </body>
+</html>
