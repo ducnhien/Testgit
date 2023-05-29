@@ -1,209 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <script>
-      function cau1() {
-        alert("Hi, welcome to javascript");
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    
+    label {
+      margin: 0 15px;
+      font-size: 2rem;
+    }
+
+    input {
+      height: 25px;
+      width: 30%;
+      border:  2px solid #f54321;
+      border-radius: 20px;
+    }
+  </style>
+</head>
+<body>
+  <label for="">Score checker:</label>
+  <input type="text" id="rank" placeholder="Enter your score" onchange="bai1()">
+  <form action="" id="result"></form>
+
+  <script>
+    function bai1() {
+      var score = document.getElementById('rank').value;
+      var result = document.getElementById('result');
+
+      if (score == "") {
+        result.innerHTML = 'Pls enter the number !!';
+      } else if (isNaN(score)) {
+        result.innerHTML = 'Pls enter the numberic !!';
+      } else if (score >= 9 && score <= 10) {
+        result.innerHTML = 'Good !!';
+      } else if (score >= 7 && score < 9) {
+        result.innerHTML = 'so no good !!';
+      } else if (score > 10 || score < 0) {
+        result.innerHTML = 'Pls enter the number between 0 and 10 !!';
+      } else {
+        result.innerHTML = 'Weak !!';
       }
-
-      function cau2() {
-        var displayPage = confirm("Do you want to display this page ?");
-
-        if (displayPage) {
-          document.write("This page to display!");
-        } else {
-          document.write("This page to not display");
-        }
-      }
-
-      function cau3() {
-        var userName = prompt("Enter your name:");
-
-        if (userName != null && userName !== "") {
-          alert("Hi, " + userName + ".How are you?");
-        } else {
-          alert("No name");
-        }
-      }
-
-      function cau4() {
-        var num1 = Number(prompt("Enter first number: "));
-        var num2 = Number(prompt("Enter second number: "));
-
-        var sum = num1 + num2;
-        var diff = num1 + num2;
-        var prod = num1 * num2;
-        var quotient = num1 / num2;
-
-        document.write(num1 + " + " + num2 + " = " + sum + "<br>");
-        document.write(num1 + " - " + num2 + " = " + diff + "<br>");
-        document.write(num1 + " * " + num2 + " = " + prod + "<br>");
-        document.write(num1 + " / " + num2 + " = " + quotient + "<br>");
-      }
-
-      function cau5() {
-        var a = Number(prompt("Enter a: "));
-        var b = Number(prompt("Enter b: "));
-
-        if (a === 0) {
-          if (b === 0) {
-            document.write("Phương trình vô sô nghiệm");
-          } else {
-            document.write("Phương trình vô nghiệm");
-          }
-        } else {
-          var x = -b / a;
-          document.write("Ngiệm của phương trình là x = " + x);
-        }
-      }
-
-      function cau6() {
-        var a = Number(prompt("Nhập hệ số a: "));
-        var b = Number(prompt("Nhập hệ số b: "));
-        var c = Number(prompt("Nhập hệ số c: "));
-
-        if (a === 0) {
-          if (b === 0) {
-            if (c === 0) {
-              document.write("Phương trình có vô số nghiệm");
-            } else {
-              document.write("Phương trình vô nghiệm");
-            }
-          } else {
-            var x = -c / b;
-            document.write("Nghiệm của phương trình là x = " + x);
-          }
-        } else {
-          var delta = b * b - 4 * a * c;
-          if (delta < 0) {
-            document.write("Phương trình vô nghiệm");
-          } else if (delta === 0) {
-            var x = -b / (2 * a);
-            document.write("Phương trình có nghiệm kép x = " + x);
-          } else {
-            var x1 = (-b + Math.sqrt(delta)) / (2 * a);
-            var x2 = (-b - Math.sqrt(delta)) / (2 * a);
-            document.write(
-              "Phương trình có hai nghiệm phân biệt: x1 = " +
-                x1 +
-                ", x2 = " +
-                x2
-            );
-          }
-        }
-      }
-
-      function cau7() {
-        var num1 = parseInt(prompt("Nhập số thứ nhất: "));
-        var num2 = parseInt(prompt("Nhập số thứ hai: "));
-        var result = parseInt(prompt("Tính tổng của " + num1 + " và " + num2));
-
-        if (result === num1 + num2) {
-          document.write("Correct");
-        } else {
-          document.write("Incorrect");
-        }
-      }
-
-      function cau8() {
-        var className = prompt("Nhập tên lớp: ");
-
-        // Sử dụng biểu thức chính quy để kiểm tra định dạng tên lớp
-        var classRegex = /^20IT\d$/;
-
-        if (classRegex.test(className)) {
-          document.write("Tên lớp hợp lệ: " + className);
-        } else {
-          document.write("Tên lớp không hợp lệ");
-        }
-      }
-
-      function cau9() {
-        var studentId = prompt("Nhập mã sinh viên: ");
-
-        // Sử dụng biểu thức chính quy để kiểm tra định dạng mã sinh viên
-        var studentIdRegex = /^20IT\d{3}$/;
-
-        if (studentIdRegex.test(studentId)) {
-          document.write("Mã sinh viên hợp lệ: " + studentId);
-        } else {
-          document.write("Mã sinh viên không hợp lệ");
-        }
-      }
-
-      function cau10() {
-        var name;
-
-        do {
-          name = prompt("Nhập tên của bạn: ");
-        } while (name === "");
-
-        document.write(
-          "Chào mừng " + name + " đến với trang web của chúng tôi!"
-        );
-      }
-
-      function cau11() {
-        var age;
-
-        do {
-          age = prompt("Nhập tuổi của bạn: ");
-
-          if (isNaN(age) || age < 1 || age > 129) {
-            alert(
-              "Tuổi phải là một số lớn hơn một và nhỏ hơn 130. Vui lòng nhập lại!"
-            );
-            age = undefined;
-          }
-        } while ((age = undefined));
-
-        document.write("Tuổi của bạn là: " + age);
-      }
-
-      function cau12() {
-        var arr = [];
-
-        for (var i = 1; i <= 5; i++) {
-          var element = prompt("Nhập phần tử " + i + ": ");
-
-          arr.push(element);
-        }
-
-        document.write("Mảng sau khi khởi tạo: " + arr + "<br>");
-        document.write(
-          "Mảng sau khi sắp xếp: " +
-            arr.sort(function (a, b) {
-              return a - b;
-            })
-        );
-      }
-
-	  function cau13() {
-		var input = prompt("Nhập vào chuỗi: ");
-
-		var output = input.replace(/a/g, "VietHan");
-
-		alert(output);
-	  }
-    </script>
-  </head>
-  <body>
-    <input type="button" value="Câu 1" onclick="cau1()" />
-    <input type="button" value="Câu 2" onclick="cau2()" />
-    <input type="button" value="Câu 3" onclick="cau3()" />
-    <input type="button" value="Câu 4" onclick="cau4()" />
-    <input type="button" value="Câu 5" onclick="cau5()" />
-    <input type="button" value="Câu 6" onclick="cau6()" />
-    <input type="button" value="Câu 7" onclick="cau7()" />
-    <input type="button" value="Câu 8" onclick="cau8()" />
-    <input type="button" value="Câu 9" onclick="cau9()" />
-    <input type="button" value="Câu 10" onclick="cau10()" />
-    <input type="button" value="Câu 11" onclick="cau11()" />
-    <input type="button" value="Câu 12" onclick="cau12()" />
-	<input type="button" value="Câu 13" onclick="cau13()" />
-  </body>
+    }
+  </script>
+</body>
 </html>
