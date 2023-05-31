@@ -1,56 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
   <style>
-    body {
+    .favorite-products-container {
+      position: relative;
+      width: 100px;
+    }
+    .favorite-products-icon {
       display: flex;
-      flex-direction: row;
       align-items: center;
       justify-content: center;
-      height: 100vh;
+      position: relative;
+      cursor: pointer;
     }
-    
-    label {
-      margin: 0 15px;
-      font-size: 2rem;
+    .favorite-products-icon i {
+      font-size: 24px;
+      color: #999;
     }
-
-    input {
-      height: 25px;
-      width: 30%;
-      border:  2px solid #f54321;
-      border-radius: 20px;
+    .favorite-products-icon:hover i {
+      color: #f00;
+    }
+    .favorite-products-count {
+      position: absolute;
+      top: -10px;
+      right: -8px;
+      width: 20px;
+      height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: bold;
+      color: #fff;
+      background-color: #f00;
+      border-radius: 50%;
+    }
+    .favorite-products {
+      position: absolute;
+      top: 30px;
+      left: -150px;
+      width: 200px;
+      height: 120px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease-in-out;
+      z-index: 1;
+    }
+    .favorite-products ul {
+      list-style: none;
+      margin: 0;
+      padding: 8px;
+    }
+    .favorite-products li {
+      margin-bottom: 4px;
+    }
+    .favorite-products-icon:hover + .favorite-products {
+      left: 0;
+      opacity: 1;
+      visibility: visible;
     }
   </style>
-</head>
-<body>
-  <label for="">Score checker:</label>
-  <input type="text" id="rank" placeholder="Enter your score" onchange="bai1()">
-  <form action="" id="result"></form>
+  <body>
+    <div class="favorite-products-container">
+      <div class="favorite-products-icon">
+        <i class="fa fa-heart"></i>
+        <div class="favorite-products-count">3</div>
+      </div>
+      <div class="favorite-products">
+        <ul>
+          <li>Product 1</li>
+          <li>Product 2</li>
+          <li>Product 3</li>
+        </ul>
+      </div>
+    </div>
 
-  <script>
-    function bai1() {
-      var score = document.getElementById('rank').value;
-      var result = document.getElementById('result');
+    <script>
+      // Lấy danh sách sản phẩm yêu thích từ local storage hoặc khởi tạo đối tượng mới
+      var favoriteProducts =
+        JSON.parse(localStorage.getItem("favoriteProducts")) || [];
 
-      if (score == "") {
-        result.innerHTML = 'Pls enter the number !!';
-      } else if (isNaN(score)) {
-        result.innerHTML = 'Pls enter the numberic !!';
-      } else if (score >= 9 && score <= 10) {
-        result.innerHTML = 'Good !!';
-      } else if (score >= 7 && score < 9) {
-        result.innerHTML = 'so no good !!';
-      } else if (score > 10 || score < 0) {
-        result.innerHTML = 'Pls enter the number between 0 and 10 !!';
-      } else {
-        result.innerHTML = 'Weak !!';
-      }
-    }
-  </script>
-</body>
+      // Hiển thị số lượng sản phẩm yêu thích trên biểu tượng trái tim
+      document.querySelector(".favorite-products-count").textContent =
+        favoriteProducts.length;
+
+      // Hiển thị danh sách sản phẩm yêu thích
+      var favoriteProductsHtml = "";
+      favoriteProducts.forEach(function (product) {
+        favoriteProductsHtml += "<li>" + product + "</li>";
+      });
+      document.querySelector(".favorite-products ul").innerHTML =
+        favoriteProductsHtml;
+
+      // Thêm sự kiện click vào biểu tượng trái tim để thêm sản phẩm vào danh sách yêu thích
+      document
+        .querySelector(".favorite-products-icon")
+        .addEventListener("click", function () {
+          var newProduct = prompt("Enter your favorite product:");
+          if (newProduct) {
+            favoriteProducts.push(newProduct);
+            localStorage.setItem(
+              "favoriteProducts",
+              JSON.stringify(favoriteProducts)
+            );
+            document.querySelector(".favorite-products-count").textContent =
+              favoriteProducts.length;
+            var favoriteProductsHtml = "";
+            favoriteProducts.forEach(function (product) {
+              favoriteProductsHtml += "<li>" + product + "</li>";
+            });
+            document.querySelector(".favorite-products ul").innerHTML =
+              favoriteProductsHtml;
+          }
+        });
+    </script>
+  </body>
 </html>

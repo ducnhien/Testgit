@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Trò chơi đoán số</h1>
+    <p>
+      Số cần tìm trong khoảng từ <span id="min"></span> đến
+      <span id="max"></span>
+    </p>
+    <p>Bạn đã đoán <span id="guesses"></span></p>
+    <label for="guess">Số của bạn:</label>
+    <input type="text" id="guess"/>
+    <button id="submitGuess" onclick="checkGuess()">Đoán</button>
+    <button id="newGame" onclick="newGame()">Bắt đầu lại</button>
+
+    <script>
+      var minNumber = 1;
+      var maxNumber = 100;
+      var randomNumber = getRandomNumber(minNumber, maxNumber);
+      var guesses = 0;
+
+      function getRandomNumber(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      }
+
+      function checkGuess() {
+        var guessInput = document.getElementById("guess");
+        var guess = parseInt(guessInput.value);
+        var messageElement = document.getElementById("message");
+
+        if (guess === randomNumber) {
+          messageElement.innerHTML = "Bạn đã chiến thắng!";
+          newGame();
+        } else if (guess < randomNumber) {
+          messageElement.innerHTML = "Số cần tìm LỚN HƠN số bạn đoán.";
+          guesses++;
+        } else if (guess > randomNumber) {
+          messageElement.innerHTML = "Số cần tìm NHỎ HƠN số bạn đoán.";
+          guesses++;
+        }
+
+        var guessesElement = document.getElementById("guesses");
+        guessesElement.innerHTML = guesses;
+
+        if (guesses === 7) {
+          messageElement.innerHTML = "Bạn đã thua!";
+          newGame();
+        }
+      }
+
+      function newGame() {
+        randomNumber = getRandomNumber(minNumber, maxNumber);
+        guesses = 0;
+        var guessesElement = document.getElementById("guesses");
+        guessesElement.innerHTML = guesses;
+        var messageElement = document.getElementById("message");
+        messageElement.innerHTML = "";
+        var guessInput = document.getElementById("guess");
+        guessInput.value = "";
+      }
+
+      var minElement = document.getElementById("min");
+      minElement.innerHTML = minNumber;
+      var maxElement = document.getElementById("max");
+      maxElement.innerHTML = maxNumber;
+
+      var submitButton = document.getElementById("submitGuess");
+      submitButton.addEventListener("click", checkGuess);
+
+      var newGameButton = document.getElementById("newGame");
+      newGameButton.addEventListener("click", newGame);
+    </script>
+  </body>
+</html>

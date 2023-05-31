@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #clock {
+        font-size: 24px;
+        font-weight: bold;
+        text-align: center;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="clock"></div>
+    <button id="startButton" onclick="startClock()">Chạy đồng hồ</button>
+    <button id="stopButton" onclick="stopClock()">Ngừng đồng hồ</button>
+
+    <script>
+      function displayDateTime() {
+        var clock = document.getElementById("clock");
+
+        var today = new Date();
+        var weekdayNames = [
+          "Chủ nhật",
+          "Thứ hai",
+          "Thứ ba",
+          "Thứ tư",
+          "Thứ năm",
+          "Thứ sáu",
+          "Thứ bảy",
+        ];
+        var weekday = weekdayNames[today.getDay()];
+        var date = today.getDate();
+        var monthNames = [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+        ];
+        var month = monthNames[today.getMonth()];
+        var year = today.getFullYear();
+
+        clock.innerHTML =
+          weekday + ", ngày " + date + ", tháng " + month + ", năm " + year;
+      }
+
+      var intervalId;
+
+      function startClock() {
+        intervalId = setInterval(displayTime, 1000);
+      }
+
+      function stopClock() {
+        clearInterval(intervalId);
+      }
+
+      function displayTime() {
+        var clock = document.getElementById("clock");
+
+        var today = new Date();
+        var hours = today.getHours();
+        var minutes = today.getMinutes();
+        var seconds = today.getSeconds();
+
+        hours = addLeadingZero(hours);
+        minutes = addLeadingZero(minutes);
+        seconds = addLeadingZero(seconds);
+
+        clock.innerHTML = hours + ":" + minutes + ":" + seconds;
+      }
+
+      function addLeadingZero(number) {
+        if (number < 10) {
+          return "0" + number;
+        } else {
+          return number;
+        }
+      }
+
+      displayDateTime();
+    </script>
+  </body>
+</html>

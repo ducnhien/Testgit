@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #ad-container {
+        position: relative;
+        width: 500px;
+        height: 200px;
+        margin: 20px auto;
+        background-color: #eee;
+        overflow: hidden;
+      }
+
+      #ad-container img {
+        max-width: 100%;
+        height: auto;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+
+      #ad-container img.active {
+        opacity: 1;
+      }
+
+      #ad-container .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: #fff;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        text-align: center;
+        transition: opacity 0.3s;
+      }
+
+      #ad-container:hover .overlay {
+        display: flex;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="ad-container">
+      <img src="product-1.png" alt="Quảng cáo 1" class="active" onclick="clickAd(1)"/>
+      <img src="product-2.png" alt="Quảng cáo 2" onclick="clickAd(2)" />
+      <img src="product-3.png" alt="Quảng cáo 3" onclick="clickAd(3)" />
+      <div class="overlay">
+        <p>Thông tin quảng cáo sẽ được hiển thị ở đây</p>
+      </div>
+    </div>
+
+    <script>
+      var ads = document
+        .getElementById("ad-container")
+        .getElementsByTagName("img");
+      var currentAd = 0;
+      var overlay = document.querySelector(".overlay");
+
+      // Hàm chuyển đổi quảng cáo
+      function changeAd() {
+        ads[currentAd].classList.remove("active");
+        currentAd = Math.floor(Math.random() * ads.length);
+        ads[currentAd].classList.add("active");
+      }
+
+      // Hàm xử lý sự kiện click trên quảng cáo
+      function clickAd(adNumber) {
+        switch (adNumber) {
+          case 1:
+            window.location.href = "http://www.example1.com";
+            break;
+          case 2:
+            window.location.href = "http://www.example2.com";
+            break;
+          case 3:
+            window.location.href = "http://www.example3.com";
+            break;
+        }
+      }
+
+      // Hàm xử lý sự kiện hover trên quảng cáo
+      function hoverAd() {
+        overlay.style.display = "flex";
+      }
+
+      // Hàm xử lý sự kiện out hover trên quảng cáo
+      function outAd() {
+        overlay.style.display = "none";
+      }
+
+      // Chuyển đổi quảng cáo sau mỗi 5 giây
+      setInterval(changeAd, 5000);
+
+      // Thiết lập sự kiện hover và out hover cho quảng cáo
+      for (var i = 0; i < ads.length; i++) {
+        ads[i].addEventListener("mouseover", hoverAd, false);
+        ads[i].addEventListener("mouseout", outAd, false);
+      }
+    </script>
+  </body>
+</html>
