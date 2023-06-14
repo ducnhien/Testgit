@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bài 5</title>
+  </head>
+  <body>
+    <h1>Thời gian còn lại đến Tết Nguyên Đán 2024:</h1>
+    <p id="thoi-gian-con-lai" style="font-size: 30px;"></p>
+
+    <script>
+      function tinhThoiGianConLai() {
+        var mucTieu = new Date("Jan 1, 2024 00:00:00").getTime();
+
+        var hienTai = new Date().getTime();
+
+        var conLai = mucTieu - hienTai;
+
+        var ngay = Math.floor(conLai / (1000 * 60 * 60 * 24));
+        var gio = Math.floor(
+          (conLai % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        var phut = Math.floor((conLai % (1000 * 60 * 60)) / (1000 * 60));
+        var giay = Math.floor((conLai % (1000 * 60)) / 1000);
+
+        document.getElementById("thoi-gian-con-lai").innerHTML = ngay + " ngày " + gio + " giờ ";
+
+        setTimeout(tinhThoiGianConLai, 1000);
+      }
+
+      tinhThoiGianConLai();
+    </script>
+  </body>
+</html>

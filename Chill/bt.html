@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        flex-direction: column;
+        height: 100vh;
+      }
+
+      div {
+        margin: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root">
+      <input id="num1" type="number" placeholder="Enter 1st number" />
+      <input id="num2" type="number" placeholder="Enter 2nd number" />
+      <input type="submit" value="Submit" onclick="checker()" />
+      <div id="result"></div>
+    </div>
+
+    <div id="app">
+        <button id="change">Click me</button>
+        <div id="myDiv">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, non.</div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        // Bài 1s
+      $(document).ready(function() {
+        $('input[type="submit"]').click(function(event) {
+            event.preventDefault();
+            var num1 = $('#num1').val();
+            var num2 = $('#num2').val();
+            var result = null;
+
+            if (!isNaN(num1) && !isNaN(num2)) {
+            if (num1 > num2) {
+              result = num1;
+            } else if (num2 > num1) {
+              result = num2;
+            }
+          } else {
+            alert("ERROR: Please enter numbers only");
+          }
+
+          $("#result").html("Result: " + result);
+        })
+      })
+
+    //   Bài 2
+    $(document).ready(function() {
+        $("#change").click(function() {
+            $("#myDiv").html("This is div befor change")
+        })
+    })
+    </script>
+  </body>
+</html>

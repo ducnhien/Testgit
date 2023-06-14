@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bài 1</title>
+    <style>
+        form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+  </head>
+  <body>
+    <form>
+      <label for="NoiDung">Nội dung:</label>
+      <textarea
+        id="NoiDung"
+        name="NoiDung"
+        rows="4"
+        cols="50"
+        oninput="updateCharacterCount()"
+      ></textarea
+      ><br />
+
+      <label for="SoKyTu">Số ký tự:</label>
+      <input type="text" id="SoKyTu" name="SoKyTu" readonly /><br />
+
+      <span id="errorMessage"></span>
+    </form>
+
+    <script>
+      function updateCharacterCount() {
+        var textArea = document.getElementById("NoiDung");
+        var textBox = document.getElementById("SoKyTu");
+        var errorMessage = document.getElementById("errorMessage");
+
+        var characterCount = textArea.value.length;
+        textBox.value = characterCount;
+
+        if (characterCount > 200) {
+          errorMessage.innerHTML = "Bạn đã gõ quá số ký tự cho phép!";
+        } else {
+          errorMessage.innerHTML = "";
+        }
+      }
+    </script>
+  </body>
+</html>

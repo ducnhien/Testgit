@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bài 2</title>
+    <style>
+      #status {
+        height: 20px;
+        line-height: 20px;
+        background-color: #f0f0f0;
+        text-align: center;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        font-size: 14px;
+        font-weight: bold;
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <label for="HoTen">Họ Tên:</label>
+      <input type="text" id="HoTen" name="HoTen" /><br />
+
+      <label for="GioiTinh">Giới tính:</label>
+      <input type="radio" name="GioiTinh" value="nam" />Nam
+      <input type="radio" name="GioiTinh" value="nu" />Nữ<br />
+
+      <input
+        type="submit"
+        value="Gửi"
+        onmouseenter="showStatus('Bạn đang di chuyển chuột vào nút gửi')"
+      />
+    </form>
+    <div id="status"></div>
+
+    <script>
+      function showStatus(message) {
+        var statusDiv = document.getElementById("status");
+        statusDiv.innerHTML = message;
+        statusDiv.style.display = "block";
+      }
+      function hideStatus() {
+        var statusDiv = document.getElementById("status");
+        statusDiv.style.display = "none";
+      }
+      window.onload = function () {
+        document.onmousemove = function () {
+          hideStatus();
+        };
+      };
+    </script>
+  </body>
+</html>

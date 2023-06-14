@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bài 3</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        line-height: 1.5;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      label {
+        display: inline-block;
+        width: 100px;
+        text-align: center;
+      }
+
+      input[type="text"] {
+        padding: 8px 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+        line-height: 1.5;
+      }
+
+      input[type="text"]:focus {
+        outline: none;
+        border-color: #0080ff;
+        box-shadow: 0 0 4px #0080ff;
+      }
+
+      input[type="text"][readonly] {
+        background-color: #f0f0f0;
+        border-color: #f0f0f0;
+      }
+
+      input[type="text"][readonly]:focus {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <label for="SoLuong">Số lượng:</label>
+    <input type="text" id="SoLuong" name="SoLuong" /><br />
+
+    <label for="DonGia">Đơn giá:</label>
+    <input type="text" id="DonGia" name="DonGia" onkeyup="calculateTotal()" /><br />
+
+    <label for="ThanhTien">Thành tiền:</label>
+    <input type="text" id="ThanhTien" name="ThanhTien" readonly />
+
+    <script>
+        function calculateTotal() {
+            var quantity = document.getElementById("SoLuong").value;
+            var price = document.getElementById("DonGia").value;
+            var total = quantity * price;
+            document.getElementById("ThanhTien").value = total;
+        }
+    </script>
+  </body>
+</html>
